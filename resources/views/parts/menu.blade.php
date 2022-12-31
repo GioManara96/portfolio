@@ -33,8 +33,9 @@
                 ->get();
             ?>
             @foreach ($socials as $social)
-                <a href="{{ $social->url }}" class="{{ $social->class }}"><i class="bi bi-{{ $social->class }}"
-                        target="_blank" title="clicca per aprire la pagina social"></i></a>
+                <a href="{{ $social->url }}" class="{{ $social->class }}" target="_blank" title="clicca per aprire la pagina social">
+                    <i class="bi bi-{{ $social->class }}"></i>
+                </a>
             @endforeach
         </div>
 

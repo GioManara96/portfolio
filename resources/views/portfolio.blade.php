@@ -172,6 +172,64 @@
     @include('parts.projects')
     <!-- End Portfolio Section -->
 
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Contatti</h2>
+                <p>Contattami</p>
+            </div>
+
+            <div class="row mt-2">
+
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="info-box">
+                        <i class="bx bx-map"></i>
+                        <h3>Indirizzo</h3>
+                        <p>Via Castelfidardo, 18bis, Padova, PD</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+                    <div class="info-box">
+                        <i class="bx bx-share-alt"></i>
+                        <h3>Profili Social</h3>
+                        <div class="social-links">
+                            <?php
+                            $socials = DB::table('aggiungi_socials')
+                                ->orderBy('position', 'asc')
+                                ->limit(2)
+                                ->get();
+                            ?>
+                            @foreach ($socials as $social)
+                                <a href="{{ $social->url }}" class="{{ $social->class }}" target="_blank"
+                                    title="clicca per aprire la pagina social">
+                                    <i class="bi bi-{{ $social->class }}"></i>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                    <div class="info-box">
+                        <i class="bx bx-envelope"></i>
+                        <h3>Email</h3>
+                        <p>giovanni.manara96@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                    <div class="info-box">
+                        <i class="bx bx-phone-call"></i>
+                        <h3>Chiamami</h3>
+                        <p>+39 3466084544</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Contact Section -->
+
     <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
